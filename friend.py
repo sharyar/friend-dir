@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from datetime import date, time, datetime
+from datetime import date
 
 
 
@@ -29,7 +29,7 @@ class Friend:
             raise ValueError('Can not compare a non-friend object')
         
         return (self.fname == o.fname and self.lname == o.lname and self.birthdate == o.birthdate)
-            
+
 
 class FriendList:
     def __init__(self, friends = []) -> None:
@@ -49,12 +49,3 @@ class FriendList:
             
     def __str__(self) -> str:
         return str(list(friend.fname + ' ' + friend.lname for friend in self.friends))
-        
-
-f1 = Friend('Sam', 'Hurd', '780-293-2379', '2020-01-01')
-print(f1)
-f2 = Friend('Sam', 'Hurd', '780-293-2379', '2020-01-01')
-print(f2)
-
-list_friends = FriendList([f1, f2])
-print(list_friends)
